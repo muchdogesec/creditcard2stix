@@ -1,0 +1,3 @@
+pandas==2.2.2
+stix2==3.0.1
+python-dotenv==1.0.1
