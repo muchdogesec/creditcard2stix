@@ -6,10 +6,11 @@ import hashlib
 import argparse
 import logging
 from datetime import datetime
-from stix2 import Bundle, Identity, Relationship, FileSystemStore, CustomObservable
+from stix2 import Bundle, Identity, Relationship, CustomObservable, parse, FileSystemStore
 from stix2.properties import StringProperty, IDProperty, ListProperty, ReferenceProperty
 from dotenv import load_dotenv
 import os
+import shutil
 
 # Load API key from .env file
 load_dotenv()
@@ -24,6 +25,13 @@ IDENTITY_NAMESPACE = "d287a5a4-facc-5254-9563-9e92e3e729ac"
 
 # Define output directory
 OUTPUT_DIR = "stix2_objects"
+
+# URLs of default STIX objects
+DEFAULT_OBJECT_URLS = [
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/extension-definition/bank-card.json",
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/creditcard2stix.json",
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/creditcard2stix.json"
+]
 
 _type = 'bank-card'
 
@@ -121,40 +129,71 @@ def create_relationship(card_stix, identity_stix):
         ]
     )
 
+def download_default_objects(fs_store):
+    for url in DEFAULT_OBJECT_URLS:
+        response = requests.get(url)
+        response.raise_for_status()
+        obj = parse(response.text)
+        fs_store.add(obj)
+
 def process_csv(input_csv, fs_store):
+    identities = {}
+    cards = {}
+
     with open(input_csv, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
-        identities = {}
-        
+
         for row in reader:
             card_number = row['card_number']
             logging.debug(f"Processing card number: {card_number}")
-            bin_data = get_bin_data(card_number)
-            card_stix = create_credit_card_stix(row, bin_data)
-            fs_store.add(card_stix)
-            
-            if bin_data and bin_data['BIN']['valid']:
-                identity_key = f"{bin_data['BIN']['issuer']['name']}_{bin_data['BIN']['country']['alpha2']}"
-                if identity_key not in identities:
-                    identity_stix = create_identity(bin_data)
-                    identities[identity_key] = identity_stix
-                    fs_store.add(identity_stix)
-                relationship_stix = create_relationship(card_stix, identities[identity_key])
-                fs_store.add(relationship_stix)
+
+            # Check if the card already exists and replace if the new record has more information
+            if card_number in cards:
+                existing_row = cards[card_number]
+                if sum(bool(x) for x in row.values()) > sum(bool(x) for x in existing_row.values()):
+                    cards[card_number] = row
+            else:
+                cards[card_number] = row
+
+    for card_number, card_data in cards.items():
+        bin_data = get_bin_data(card_number)
+        card_stix = create_credit_card_stix(card_data, bin_data)
+        fs_store.add(card_stix)
+
+        if bin_data and bin_data['BIN']['valid']:
+            identity_key = f"{bin_data['BIN']['issuer']['name']}_{bin_data['BIN']['country']['alpha2']}"
+            if identity_key not in identities:
+                identity_stix = create_identity(bin_data)
+                identities[identity_key] = identity_stix
+                fs_store.add(identity_stix)
+            relationship_stix = create_relationship(card_stix, identities[identity_key])
+            fs_store.add(relationship_stix)
 
 def main():
     parser = argparse.ArgumentParser(description='Process credit card data and convert to STIX 2.1 format.')
     parser.add_argument('--input_csv', required=True, help='Input CSV file with credit card data')
     args = parser.parse_args()
-    
+
     logging.info(f"Processing input CSV: {args.input_csv}")
-    
-    # Ensure the output directory exists
+
+    # Ensure the output directory is fresh
+    if os.path.exists(OUTPUT_DIR):
+        shutil.rmtree(OUTPUT_DIR)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
+
     fs_store = FileSystemStore(OUTPUT_DIR)
+    download_default_objects(fs_store)
     process_csv(args.input_csv, fs_store)
-    logging.info(f'STIX objects written to {OUTPUT_DIR}')
+
+    # Collect all stored objects and create a bundle
+    stix_objects = list(fs_store.query())
+    bundle = Bundle(objects=stix_objects)
+
+    output_file = os.path.join(OUTPUT_DIR, 'credit-card-bundle.json')
+    with open(output_file, 'w') as f:
+        f.write(bundle.serialize(pretty=True))
+
+    logging.info(f'STIX bundle written to {output_file}')
 
 if __name__ == '__main__':
     main()
