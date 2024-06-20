@@ -1,5 +1,7 @@
 # creditcard2stix
 
+## Overview
+
 This script contains logic to enrich a credit card number input with more information about the card (e.g. issuer, country, etc.).
 
 The script takes a card number (required), card holder name (optional), expiry date (optional), security code (optional) as inputs (as a list) and outputs a range of STIX 2.1 objects for each credit card with added enrichment data.
@@ -56,6 +58,8 @@ And without optional fields
 ```shell
 python3 creditcard2stix.py --input_csv demos/dummy_credit_cards_without_optional_fields.csv
 ```
+
+Note, if the same `card_number` is found in the file more than once, the record with the most information will be used for conversion.
 
 ## Data Sources
 
@@ -231,8 +235,9 @@ Note the bundle generatd includes all Identity objects for credit cards that are
 
 The UUID is generated using the namespace `d287a5a4-facc-5254-9563-9e92e3e729ac` and the md5 hash of all objects sorted in the bundle.
 
+## Useful utilitles
 
-## A note on `demos/generate_credit_cards.py`
+### `demos/generate_credit_cards.py`
 
 Running
 
@@ -251,6 +256,14 @@ python3 generate_credit_cards.py
 
 ```shell
 python3 generate_credit_cards.py --n 100 --t amex mastercard
+```
+
+### `tests/*`
+
+Contains a range of CSVs that cover various ways the script can be used. Useful for understanding the logic of this script.
+
+```shell
+python3 generate_credit_cards.py --input_csv tests/same_card_appears_twice.csv
 ```
 
 ## Useful supporting tools

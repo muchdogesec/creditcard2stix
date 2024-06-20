@@ -1,112 +1,199 @@
-import random
-import pandas as pd
-from datetime import datetime
+import csv
+import uuid
+import json
+import requests
+import hashlib
 import argparse
+import logging
+from datetime import datetime
+from stix2 import Bundle, Identity, Relationship, CustomObservable, parse
+from stix2.properties import StringProperty, IDProperty, ListProperty, ReferenceProperty
+from stix2.datastore import FileSystemStore
+from dotenv import load_dotenv
 import os
 
-# Load the CSV file
-file_path = 'bin_ranges.csv'
-df = pd.read_csv(file_path)
+# Load API key from .env file
+load_dotenv()
+BIN_LIST_API_KEY = os.getenv("BIN_LIST_API_KEY")
 
-# Default logic for card number length
-default_lengths = {
-    'visa': [16, 19],
-    'mastercard': [16, 19],
-    'discover': [14, 16],
-    'unionpay': [16, 17, 18, 19]
-}
+# Set up logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# card_security_code lengths by card type
-card_security_code_lengths = {
-    'visa': 3,
-    'mastercard': 3,
-    'discover': 3,
-    'unionpay': 3,
-    'amex': 4,
-    'diners': 3
-}
+# Define namespaces
+OASIS_NAMESPACE = "00abedb4-aa42-466c-9c01-fed23315a9b7"
+IDENTITY_NAMESPACE = "d287a5a4-facc-5254-9563-9e92e3e729ac"
 
-# Expiry date range
-expiry_start = datetime.strptime('01/28', '%m/%y')
-expiry_end = datetime.strptime('12/28', '%m/%y')
+# Define output directory
+OUTPUT_DIR = "stix2_objects"
 
-# Valid date range
-valid_start = datetime.strptime('01/23', '%m/%y')
-valid_end = datetime.strptime('12/23', '%m/%y')
+# URLs of default STIX objects
+DEFAULT_OBJECT_URLS = [
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/extension-definition/bank-card.json",
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/creditcard2stix.json",
+    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/creditcard2stix.json"
+]
 
-# Sample first and last names for generating cardholder names
-first_names = ['John', 'Jane', 'Alex', 'Chris', 'Pat', 'Sam', 'Taylor', 'Morgan', 'Jamie', 'Jordan']
-last_names = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor']
+_type = 'bank-card'
 
-def generate_random_card_holder_name():
-    first_name = random.choice(first_names)
-    last_name = random.choice(last_names)
-    return f"{first_name} {last_name}"
+@CustomObservable('bank-card', [
+    ('type', StringProperty(fixed=_type)),
+    ('spec_version', StringProperty(fixed='2.1')),
+    ('id', IDProperty(_type, spec_version='2.1')),
+    ('format', StringProperty()),
+    ('number', StringProperty(required=True)),
+    ('scheme', StringProperty()),
+    ('brand', StringProperty()),
+    ('currency', StringProperty()),
+    ('issuer_name', StringProperty()),
+    ('issuer_country', StringProperty()),
+    ('holder_name', StringProperty()),
+    ('valid_from', StringProperty()),
+    ('valid_to', StringProperty()),
+    ('security_code', StringProperty()),
+    ('object_marking_refs', ListProperty(ReferenceProperty(valid_types='marking-definition', spec_version='2.1'))),
+], id_contrib_props=['number'])
+class BankCard(object):
+    pass
 
-def generate_random_credit_card(card_type, iin_start, iin_end, number_length=None):
+def get_bin_data(card_number):
+    bin_number = card_number[:6]
+    url = f"https://bin-ip-checker.p.rapidapi.com/?bin={bin_number}"
+    headers = {
+        'Content-Type': 'application/json',
+        'x-rapidapi-host': 'bin-ip-checker.p.rapidapi.com',
+        'x-rapidapi-key': BIN_LIST_API_KEY
+    }
     try:
-        if number_length is None or pd.isna(number_length):
-            number_length = random.choice(default_lengths.get(card_type, [16]))
-        else:
-            number_length = int(number_length)
+        logging.debug(f"Requesting BIN data for card number: {card_number}")
+        response = requests.post(url, headers=headers, json={"bin": bin_number}, timeout=10)
+        response.raise_for_status()
+        logging.debug(f"Received response: {response.json()}")
+        return response.json()
+    except requests.RequestException as e:
+        logging.error(f"Error fetching BIN data for {card_number}: {e}")
+        return None
 
-        iin_start_str = str(int(iin_start))
-        iin_end_str = str(int(iin_end)) if not pd.isna(iin_end) else ''
+def create_identity(bin_data):
+    issuer = bin_data['BIN']['issuer']
+    country = bin_data['BIN']['country']
+    name = f"{issuer['name']} ({country['alpha2']})"
+    identity_id = f"identity--{str(uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), name))}"
+    return Identity(
+        id=identity_id,
+        name=name,
+        identity_class="organization",
+        sectors=["financial-services"],
+        contact_information=f"* Bank URL: {issuer['website']},\n* Bank Phone: {issuer['phone']}",
+        created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+        object_marking_refs=[
+            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+        ]
+    )
 
-        middle_length = number_length - len(iin_start_str) - len(iin_end_str)
-        card_number = iin_start_str + ''.join([str(random.randint(0, 9)) for _ in range(middle_length)]) + iin_end_str
+def create_credit_card_stix(card_data, bin_data):
+    card_id = f"bank-card--{str(uuid.uuid5(uuid.UUID(OASIS_NAMESPACE), card_data['card_number']))}"
+    credit_card = BankCard(
+        type='bank-card',
+        spec_version='2.1',
+        id=card_id,
+        format=bin_data['BIN']['type'] if bin_data else None,
+        number=card_data['card_number'],
+        scheme=bin_data['BIN']['scheme'] if bin_data else None,
+        brand=bin_data['BIN']['brand'] if bin_data else None,
+        currency=bin_data['BIN']['currency'] if bin_data else None,
+        issuer_name=bin_data['BIN']['issuer']['name'] if bin_data else None,
+        issuer_country=bin_data['BIN']['country']['alpha2'] if bin_data else None,
+        holder_name=card_data.get('card_holder_name'),
+        valid_from=card_data.get('card_valid_date'),
+        valid_to=card_data.get('card_expiry_date'),
+        security_code=card_data.get('card_security_code'),
+        object_marking_refs=[
+            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+        ]
+    )
+    return credit_card
 
-        card_security_code_length = card_security_code_lengths.get(card_type, 3)
-        card_security_code = ''.join([str(random.randint(0, 9)) for _ in range(card_security_code_length)])
+def create_relationship(card_stix, identity_stix):
+    relationship_id = f"relationship--{str(uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), f'{card_stix.id}+{identity_stix.id}'))}"
+    return Relationship(
+        id=relationship_id,
+        relationship_type="issued-by",
+        created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+        source_ref=card_stix.id,
+        target_ref=identity_stix.id,
+        object_marking_refs=[
+            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+        ]
+    )
 
-        card_expiry_date = (expiry_start + (expiry_end - expiry_start) * random.random()).strftime('%m/%y')
-        card_valid_date = (valid_start + (valid_end - valid_start) * random.random()).strftime('%m/%y')
+def download_default_objects():
+    default_objects = []
+    for url in DEFAULT_OBJECT_URLS:
+        response = requests.get(url)
+        response.raise_for_status()
+        obj = parse(response.text)
+        default_objects.append(obj)
+    return default_objects
 
-        card_holder_name = generate_random_card_holder_name()
+def process_csv(input_csv):
+    stix_objects = []
+    identities = {}
+    cards = {}
 
-        return card_number, card_security_code, card_expiry_date, card_valid_date, card_holder_name
-    except Exception as e:
-        print(f"Error generating card for {card_type}: {e}")
-        return None, None, None, None, None
+    with open(input_csv, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
 
-def generate_credit_cards(num_cards, card_types):
-    cards = []
-    for _ in range(num_cards):
-        try:
-            row = df[df['scheme'].isin(card_types)].sample(1).iloc[0]
-            card_type = row['scheme']
-            iin_start = row['iin_start']
-            iin_end = row['iin_end']
-            number_length = row['number_length']
+        for row in reader:
+            card_number = row['card_number']
+            logging.debug(f"Processing card number: {card_number}")
 
-            card_number, card_security_code, card_expiry_date, card_valid_date, card_holder_name = generate_random_credit_card(card_type, iin_start, iin_end, number_length)
-            if card_number and card_security_code and card_expiry_date and card_valid_date and card_holder_name:
-                cards.append({
-                    'card_number': card_number,
-                    'card_security_code': card_security_code,
-                    'card_valid_date': card_valid_date,
-                    'card_expiry_date': card_expiry_date,
-                    'card_holder_name': card_holder_name
-                })
-        except Exception as e:
-            print(f"Error processing row: {e}")
-    return cards
+            # Check if the card already exists and replace if the new record has more information
+            if card_number in cards:
+                existing_row = cards[card_number]
+                if sum(bool(x) for x in row.values()) > sum(bool(x) for x in existing_row.values()):
+                    cards[card_number] = row
+            else:
+                cards[card_number] = row
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate random credit card numbers.")
-    parser.add_argument('-n', '--number', type=int, default=20000, help="Number of credit card numbers to generate.")
-    parser.add_argument('-t', '--types', nargs='+', default=['visa', 'mastercard', 'discover', 'unionpay', 'amex', 'diners'], help="Types of cards to generate (e.g. visa mastercard).")
+    for card_number, card_data in cards.items():
+        bin_data = get_bin_data(card_number)
+        card_stix = create_credit_card_stix(card_data, bin_data)
+        stix_objects.append(card_stix)
 
+        if bin_data and bin_data['BIN']['valid']:
+            identity_key = f"{bin_data['BIN']['issuer']['name']}_{bin_data['BIN']['country']['alpha2']}"
+            if identity_key not in identities:
+                identity_stix = create_identity(bin_data)
+                identities[identity_key] = identity_stix
+                stix_objects.append(identity_stix)
+            relationship_stix = create_relationship(card_stix, identities[identity_key])
+            stix_objects.append(relationship_stix)
+
+    return stix_objects
+
+def main():
+    parser = argparse.ArgumentParser(description='Process credit card data and convert to STIX 2.1 format.')
+    parser.add_argument('--input_csv', required=True, help='Input CSV file with credit card data')
     args = parser.parse_args()
 
-    num_cards = args.number
-    card_types = args.types
+    logging.info(f"Processing input CSV: {args.input_csv}")
 
-    cards = generate_credit_cards(num_cards, card_types)
+    # Ensure the output directory exists
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # Save the output to the demos directory
-    output_file = os.path.join('dummy_credit_cards.csv')
-    df_output = pd.DataFrame(cards)
-    df_output.to_csv(output_file, index=False)
+    default_objects = download_default_objects()
+    stix_objects = process_csv(args.input_csv)
+    all_objects = default_objects + stix_objects
+    bundle = Bundle(objects=all_objects)
 
-    print(f"Generated {num_cards} credit card numbers and saved to {output_file}.")
+    output_file = os.path.join(OUTPUT_DIR, 'credit-card-bundle.json')
+    with open(output_file, 'w') as f:
+        f.write(bundle.serialize(pretty=True))
+
+    logging.info(f'STIX bundle written to {output_file}')
+
+if __name__ == '__main__':
+    main()
