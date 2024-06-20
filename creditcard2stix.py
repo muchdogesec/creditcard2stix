@@ -81,6 +81,8 @@ def create_identity(bin_data):
     return Identity(
         id=identity_id,
         name=name,
+        created="2020-01-01T00:00:00.000Z",
+        modified="2020-01-01T00:00:00.000Z",
         identity_class="organization",
         sectors=["financial-services"],
         contact_information=f"* Bank URL: {issuer['website']},\n* Bank Phone: {issuer['phone']}",
@@ -121,6 +123,8 @@ def create_relationship(card_stix, identity_stix):
         id=relationship_id,
         relationship_type="issued-by",
         created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+        created="2020-01-01T00:00:00.000Z",
+        modified="2020-01-01T00:00:00.000Z",
         source_ref=card_stix.id,
         target_ref=identity_stix.id,
         object_marking_refs=[
@@ -185,9 +189,13 @@ def main():
     download_default_objects(fs_store)
     process_csv(args.input_csv, fs_store)
 
-    # Collect all stored objects and create a bundle
+    # Collect all stored objects and create a bundle with a specific UUID
     stix_objects = list(fs_store.query())
-    bundle = Bundle(objects=stix_objects)
+    sorted_objects = sorted(stix_objects, key=lambda x: x.id)
+    objects_data = ''.join([obj.serialize() for obj in sorted_objects])
+    bundle_id = f"bundle--{uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), hashlib.md5(objects_data.encode()).hexdigest())}"
+
+    bundle = Bundle(objects=sorted_objects, id=bundle_id)
 
     output_file = os.path.join(OUTPUT_DIR, 'credit-card-bundle.json')
     with open(output_file, 'w') as f:
