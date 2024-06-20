@@ -231,7 +231,7 @@ This script outputs all the objects into a single STIX 2.1 bundle `ransomwhere-b
 }
 ```
 
-Note the bundle generatd includes all Identity objects for credit cards that are referenced inside Relationship objects.
+Note the bundle generated includes all Identity objects for credit cards that are referenced inside Relationship objects.
 
 The UUID is generated using the namespace `d287a5a4-facc-5254-9563-9e92e3e729ac` and the md5 hash of all objects sorted in the bundle.
 
