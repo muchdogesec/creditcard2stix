@@ -6,6 +6,8 @@ This script contains logic to enrich a credit card number input with more inform
 
 The script takes a card number (required), card holder name (optional), expiry date (optional), security code (optional) as inputs (as a list) and outputs a range of STIX 2.1 objects for each credit card with added enrichment data.
 
+You can also optionally create a STIX Report object to document details about where this card data was obtained.
+
 This repository also contains a demo script so that you can try the script with some dummy credit card data to see how it works.
 
 ## Install 
@@ -36,30 +38,40 @@ BIN_LIST_API_KEY=
 ## Run
 
 ```shell
-python3 creditcard2stix.py --input_csv FILE.csv
+python3 creditcard2stix.py --input_csv FILE.csv --report_csv REPORT.csv
 ```
 
-The `--input_csv` file you use should be of type `.csv` and have the headers:
+Where:
 
-* `card_number` (required)
-* `card_security_code` (optional)
-* `card_valid_date` (optional)
-* `card_expiry_date` (optional)
-* `card_holder_name` (optional)
+* `--input_csv` (required): is the file containing card numbers and should be of type `.csv` and contain the headers:
+    * `card_number` (required)
+    * `card_security_code` (optional)
+    * `card_valid_date` (optional)
+    * `card_expiry_date` (optional)
+    * `card_holder_name` (optional)
+* `--report_csv` (optional): a file containing details about the dump. If passed the CSV should contain the headers, and only two rows should exist (header row and report detail row)
+    * `name` (required)
+    * `description` (optional)
+    * `published` (optional) in format YYYY-MM-DD, else time of script execution will be used
 
-You can see a sample of expected format in `demos/dummy_credit_cards.csv`. You can also use this script to get an idea about what the output of creditcard2stix looks like as follows
+### Examples
+
+The most common way to use creditcard2stix is to pass the list of leaked cards with a report detailing the dump like so;
 
 ```shell
-python3 creditcard2stix.py --input_csv demos/dummy_credit_cards.csv
+python3 creditcard2stix.py \
+    --input_csv demos/dummy_credit_cards.csv \
+    --report_csv demos/my_fake_report.csv
 ```
 
-And without optional fields
+And without optional fields and no report generated;
 
 ```shell
-python3 creditcard2stix.py --input_csv demos/dummy_credit_cards_without_optional_fields.csv
+python3 creditcard2stix.py \
+    --input_csv demos/dummy_credit_cards_without_optional_fields.csv
 ```
 
-Note, if the same `card_number` is found in the file more than once, the record with the most information will be used for conversion.
+Note, if the same `card_number` is found in the file more than once, the record with the most properties will be used for conversion.
 
 ## Data Sources
 
@@ -193,6 +205,32 @@ The UUID is generated using the namespace `d287a5a4-facc-5254-9563-9e92e3e729ac`
 
 Note, if more than one credit card in the list has the same issuer (by name and country), only one Identity is created for it.
 
+#### Report
+
+If user enters a reports csv file when running the command, a report objects will be generated as follows;
+
+```json
+{
+    "type": "report",
+    "spec_version": "2.1",
+    "id": "report--<UUID V5>",
+    "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+    "created": "<published if entered, else script runtime>",
+    "modified": "<published, else script runtime>",
+    "name": "<name>",
+    "description": "<description if entered, else omitted>",
+    "published": "<published if entered, else script runtime>",
+    "report_types": [
+        "observed-data"
+    ],
+    "object_refs": [
+        "<ALL STIX CREDIT CARDS IDS GENERATED ON THIS IMPORT>",
+    ]
+}
+```
+
+The UUID v5 is generated using the namespace `d287a5a4-facc-5254-9563-9e92e3e729ac` and an md5 hash of the credit card CSV file inputted.
+
 #### Relationship
 
 For every `bank-card` object generated, a relationship to the Identity STIX object of the `bank_name` that issued the card is created in the following format:
@@ -243,7 +281,7 @@ Running
 
 ```shell
 cd demos
-python3 demos/generate_credit_cards.py --n "<optional: Number of credit card numbers to generate>" --t "<optional: card scheme to generate>"
+python3 generate_credit_cards.py --n "<optional: Number of credit card numbers to generate>" --t "<optional: card scheme to generate>"
 ```
 
 Will generate a list of fake credit card numbers that follow the issuers schema.
@@ -251,11 +289,11 @@ Will generate a list of fake credit card numbers that follow the issuers schema.
 e.g.
 
 ```shell
-python3 generate_credit_cards.py
+python3 demos/generate_credit_cards.py
 ```
 
 ```shell
-python3 generate_credit_cards.py --n 100 --t amex mastercard
+python3 generate_credit_cards.py --n 1000 --t amex mastercard
 ```
 
 ### `tests/*`

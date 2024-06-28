@@ -6,7 +6,7 @@ import hashlib
 import argparse
 import logging
 from datetime import datetime
-from stix2 import Bundle, Identity, Relationship, CustomObservable, parse, FileSystemStore
+from stix2 import Bundle, Identity, Relationship, CustomObservable, Report, parse, FileSystemStore
 from stix2.properties import StringProperty, IDProperty, ListProperty, ReferenceProperty
 from dotenv import load_dotenv
 import os
@@ -50,7 +50,6 @@ _type = 'bank-card'
     ('valid_from', StringProperty()),
     ('valid_to', StringProperty()),
     ('security_code', StringProperty()),
-    ('object_marking_refs', ListProperty(ReferenceProperty(valid_types='marking-definition', spec_version='2.1'))),
 ], id_contrib_props=['number'])
 class BankCard(object):
     pass
@@ -95,26 +94,33 @@ def create_identity(bin_data):
 
 def create_credit_card_stix(card_data, bin_data):
     card_id = f"bank-card--{str(uuid.uuid5(uuid.UUID(OASIS_NAMESPACE), card_data['card_number']))}"
-    credit_card = BankCard(
-        type='bank-card',
-        spec_version='2.1',
-        id=card_id,
-        format=bin_data['BIN']['type'] if bin_data else None,
-        number=card_data['card_number'],
-        scheme=bin_data['BIN']['scheme'] if bin_data else None,
-        brand=bin_data['BIN']['brand'] if bin_data else None,
-        currency=bin_data['BIN']['currency'] if bin_data else None,
-        issuer_name=bin_data['BIN']['issuer']['name'] if bin_data else None,
-        issuer_country=bin_data['BIN']['country']['alpha2'] if bin_data else None,
-        holder_name=card_data.get('card_holder_name'),
-        valid_from=card_data.get('card_valid_date'),
-        valid_to=card_data.get('card_expiry_date'),
-        security_code=card_data.get('card_security_code'),
-        object_marking_refs=[
-            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-        ]
-    )
+    credit_card_data = {
+        'type': 'bank-card',
+        'spec_version': '2.1',
+        'id': card_id,
+        'format': bin_data['BIN']['type'] if bin_data else None,
+        'number': card_data['card_number'],
+        'scheme': bin_data['BIN']['scheme'] if bin_data else None,
+        'brand': bin_data['BIN']['brand'] if bin_data else None,
+        'currency': bin_data['BIN']['currency'] if bin_data else None,
+        'issuer_name': bin_data['BIN']['issuer']['name'] if bin_data else None,
+        'issuer_country': bin_data['BIN']['country']['alpha2'] if bin_data else None,
+    }
+    
+    # Add optional fields if they are present and not empty
+    optional_fields = ['card_holder_name', 'card_valid_date', 'card_expiry_date', 'card_security_code']
+    field_mapping = {
+        'card_holder_name': 'holder_name',
+        'card_valid_date': 'valid_from',
+        'card_expiry_date': 'valid_to',
+        'card_security_code': 'security_code'
+    }
+    
+    for field in optional_fields:
+        if card_data.get(field):
+            credit_card_data[field_mapping[field]] = card_data[field]
+    
+    credit_card = BankCard(**credit_card_data)
     return credit_card
 
 def create_relationship(card_stix, identity_stix):
@@ -173,9 +179,47 @@ def process_csv(input_csv, fs_store):
             relationship_stix = create_relationship(card_stix, identities[identity_key])
             fs_store.add(relationship_stix)
 
+def create_report(report_csv, stix_objects):
+    with open(report_csv, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        report_data = next(reader)
+
+    # Validate required fields
+    if 'name' not in report_data:
+        raise ValueError("Report CSV must contain 'name' field")
+
+    name = report_data['name']
+    description = report_data.get('description')
+    published_str = report_data.get('published', datetime.utcnow().isoformat() + 'Z')
+    try:
+        published = datetime.strptime(published_str, '%Y-%m-%d').isoformat() + 'Z'
+    except ValueError:
+        published = datetime.utcnow().isoformat() + 'Z'
+
+    object_refs = [obj.id for obj in stix_objects if obj.type == 'bank-card']
+
+    report_id = f"report--{uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), hashlib.md5(open(report_csv, 'rb').read()).hexdigest())}"
+
+    report = Report(
+        type="report",
+        spec_version="2.1",
+        id=report_id,
+        created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+        created=published,
+        modified=published,
+        name=name,
+        description=description,
+        published=published,
+        report_types=["observed-data"],
+        object_refs=object_refs
+    )
+
+    return report
+
 def main():
     parser = argparse.ArgumentParser(description='Process credit card data and convert to STIX 2.1 format.')
     parser.add_argument('--input_csv', required=True, help='Input CSV file with credit card data')
+    parser.add_argument('--report_csv', help='Input CSV file for the report')
     args = parser.parse_args()
 
     logging.info(f"Processing input CSV: {args.input_csv}")
@@ -189,8 +233,15 @@ def main():
     download_default_objects(fs_store)
     process_csv(args.input_csv, fs_store)
 
-    # Collect all stored objects and create a bundle with a specific UUID
     stix_objects = list(fs_store.query())
+
+    if args.report_csv:
+        logging.info(f"Generating report from CSV: {args.report_csv}")
+        report = create_report(args.report_csv, stix_objects)
+        fs_store.add(report)
+        stix_objects.append(report)
+
+    # Collect all stored objects and create a bundle with a specific UUID
     sorted_objects = sorted(stix_objects, key=lambda x: x.id)
     objects_data = ''.join([obj.serialize() for obj in sorted_objects])
     bundle_id = f"bundle--{uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), hashlib.md5(objects_data.encode()).hexdigest())}"
