@@ -1,206 +1,166 @@
 {
     "type": "bundle",
-    "id": "bundle--0e7d6e09-3526-5eaf-bcf2-3d88175e7bc7",
+    "id": "bundle--3343df54-caa4-5db0-9a13-c9f9dac1a441",
     "objects": [
         {
             "type": "bank-card",
             "spec_version": "2.1",
-            "id": "bank-card--036044a5-f5a6-5f8c-9568-51443a15c499",
+            "id": "bank-card--02ed10b9-d5a4-5c5d-a660-af7199fcc873",
+            "format": "CREDIT",
+            "number": "5421245633641709171",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "MYR",
+            "issuer_name": "MALAYAN BANKING BERHAD",
+            "issuer_country": "MY",
+            "holder_name": "John Jones",
+            "valid_from": "11/23",
+            "valid_to": "06/28",
+            "security_code": "937"
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--1ad7726c-f522-54bb-8489-816127009ec3",
             "format": "DEBIT",
-            "number": "5507211322378981",
+            "number": "5462138659568541",
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "USD",
-            "issuer_name": "WIDGET FEDERAL CREDIT UNION",
+            "issuer_name": "SCHOOLSFIRST FEDERAL CREDIT UNION",
             "issuer_country": "US",
-            "holder_name": "Sam Jones",
-            "valid_from": "09/23",
-            "valid_to": "09/28",
-            "security_code": "400",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
+            "holder_name": "Sam Davis",
+            "valid_from": "10/23",
+            "valid_to": "06/28",
+            "security_code": "743"
         },
         {
             "type": "bank-card",
             "spec_version": "2.1",
-            "id": "bank-card--0728dbfb-e99f-57bb-91f0-eee054ffc416",
-            "format": "DEBIT",
-            "number": "4571717066493601",
-            "scheme": "VISA/DANKORT",
-            "brand": "VISA/DANKORT",
-            "currency": "DKK",
-            "issuer_name": "SYDBANK A/S",
-            "issuer_country": "DK",
-            "holder_name": "Jamie Williams",
-            "valid_from": "03/23",
+            "id": "bank-card--1d843ae3-56f4-5e10-88a2-b5486ec0d6fc",
+            "format": "CREDIT",
+            "number": "373391489995698",
+            "scheme": "AMERICAN EXPRESS",
+            "brand": "AMERICAN EXPRESS",
+            "currency": "CAD",
+            "issuer_name": "",
+            "issuer_country": "CA",
+            "holder_name": "Jane Wilson",
+            "valid_from": "08/23",
             "valid_to": "01/28",
-            "security_code": "057",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
+            "security_code": "1585"
         },
         {
             "type": "bank-card",
             "spec_version": "2.1",
-            "id": "bank-card--1184e9fc-720d-52fc-96a4-6871de31e539",
+            "id": "bank-card--1fb0275c-9735-5bf2-9b5c-b2fcf24d476f",
             "format": "DEBIT",
-            "number": "4011745154761523681",
-            "scheme": "VISA",
-            "brand": "VISA",
+            "number": "5262180974785967029",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
             "currency": "USD",
-            "issuer_name": "HANCOCK WHITNEY BANK",
+            "issuer_name": "CITIBANK N.A.",
             "issuer_country": "US",
-            "holder_name": "Chris Smith",
+            "holder_name": "Alex Williams",
+            "valid_from": "01/23",
+            "valid_to": "06/28",
+            "security_code": "246"
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--280eeed8-d87f-51ca-8a92-1710eeb1a980",
+            "format": "DEBIT",
+            "number": "5508054207535117",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "USD",
+            "issuer_name": "TEG FEDERAL CREDIT UNION",
+            "issuer_country": "US",
+            "holder_name": "John Miller",
+            "valid_from": "06/23",
+            "valid_to": "08/28",
+            "security_code": "323"
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--2c0a2433-b62b-5de5-909f-178aff2ebb03",
+            "format": "DEBIT",
+            "number": "5588601012060076",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "SGD",
+            "issuer_name": "OVERSEA-CHINESE BANKING CORPORATION, LTD.",
+            "issuer_country": "SG",
+            "holder_name": "Jamie Wilson",
+            "valid_from": "11/23",
+            "valid_to": "03/28",
+            "security_code": "380"
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--40e2fbfc-6003-555d-b618-8d5b25180bf8",
+            "format": "CREDIT",
+            "number": "5390632973162771",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "BRL",
+            "issuer_name": "ITAU UNIBANCO, S.A.",
+            "issuer_country": "BR",
+            "holder_name": "Jane Davis",
             "valid_from": "03/23",
             "valid_to": "02/28",
-            "security_code": "957",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
+            "security_code": "470"
         },
         {
             "type": "bank-card",
             "spec_version": "2.1",
-            "id": "bank-card--1221e258-adf9-5148-9b54-1edcfa00d9ba",
+            "id": "bank-card--c07c76ba-56ed-576e-9820-61bdb5cf6ff2",
             "format": "CREDIT",
-            "number": "5578922131134044426",
+            "number": "5487878637281363",
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
-            "currency": "DKK",
-            "issuer_name": "NORDEA BANK AB (PUBL)",
-            "issuer_country": "DK",
-            "holder_name": "John Taylor",
-            "valid_from": "06/23",
-            "valid_to": "07/28",
-            "security_code": "646",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "bank-card",
-            "spec_version": "2.1",
-            "id": "bank-card--16ecf0f6-9c1a-5353-ae16-23a23167da75",
-            "format": "CREDIT",
-            "number": "4387630065656149",
-            "scheme": "VISA",
-            "brand": "VISA",
-            "currency": "USD",
-            "issuer_name": "STANFORD FEDERAL CREDIT UNION",
-            "issuer_country": "US",
-            "holder_name": "Jamie Wilson",
-            "valid_from": "06/23",
-            "valid_to": "04/28",
-            "security_code": "223",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "bank-card",
-            "spec_version": "2.1",
-            "id": "bank-card--5b8b0b93-a50d-5476-8463-b8abbaabd4d7",
-            "format": "DEBIT",
-            "number": "4571577218185446",
-            "scheme": "VISA/DANKORT",
-            "brand": "VISA/DANKORT",
-            "currency": "DKK",
-            "issuer_name": "NORDEA BANK DANMARK A/S",
-            "issuer_country": "DK",
-            "holder_name": "Jamie Miller",
-            "valid_from": "03/23",
-            "valid_to": "11/28",
-            "security_code": "504",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "bank-card",
-            "spec_version": "2.1",
-            "id": "bank-card--6dbd1beb-dcea-5f03-9403-ae4f53fc572b",
-            "format": "DEBIT",
-            "number": "4064988817185467",
-            "scheme": "VISA",
-            "brand": "VISA",
-            "currency": "USD",
-            "issuer_name": "THE BANCORP BANK, NATIONAL ASSOCIATION",
-            "issuer_country": "US",
-            "holder_name": "Pat Moore",
+            "currency": "MYR",
+            "issuer_name": "HONG LEONG BANK BERHAD",
+            "issuer_country": "MY",
+            "holder_name": "Chris Moore",
             "valid_from": "01/23",
             "valid_to": "01/28",
-            "security_code": "579",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
+            "security_code": "046"
         },
         {
             "type": "bank-card",
             "spec_version": "2.1",
-            "id": "bank-card--9f8bc65d-e0d1-55df-8479-737044f00750",
-            "format": "DEBIT",
-            "number": "4571226057677886",
-            "scheme": "VISA/DANKORT",
-            "brand": "VISA/DANKORT",
-            "currency": "DKK",
-            "issuer_name": "NORDEA BANK DANMARK A/S",
-            "issuer_country": "DK",
-            "holder_name": "Jamie Wilson",
-            "valid_from": "10/23",
-            "valid_to": "03/28",
-            "security_code": "317",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "bank-card",
-            "spec_version": "2.1",
-            "id": "bank-card--e84dc12a-9f56-5b65-b4d3-0dceed6795ce",
-            "format": "DEBIT",
-            "number": "4571402700224716",
-            "scheme": "VISA/DANKORT",
-            "brand": "VISA/DANKORT",
-            "currency": "DKK",
-            "issuer_name": "DANSKE BANK A/S",
-            "issuer_country": "DK",
-            "holder_name": "Chris Taylor",
-            "valid_from": "01/23",
-            "valid_to": "05/28",
-            "security_code": "740",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "bank-card",
-            "spec_version": "2.1",
-            "id": "bank-card--eaf8c69d-dc03-54b2-8105-dc42246fc34f",
-            "format": "DEBIT",
-            "number": "5511497437315197413",
+            "id": "bank-card--ccbfec73-a23a-579d-9755-35dcd444c0fd",
+            "format": "CREDIT",
+            "number": "5155904940645481758",
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
-            "currency": "USD",
-            "issuer_name": "CU COOPERATIVE SYSTEMS, LLC",
-            "issuer_country": "US",
-            "holder_name": "Morgan Johnson",
-            "valid_from": "10/23",
-            "valid_to": "10/28",
-            "security_code": "316",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
+            "currency": "BRL",
+            "issuer_name": "BANCO SANTANDER (BRASIL), S.A.",
+            "issuer_country": "BR",
+            "holder_name": "Pat Brown",
+            "valid_from": "09/23",
+            "valid_to": "07/28",
+            "security_code": "443"
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--d3701b4a-0aa7-586a-a0aa-e980109d14b9",
+            "format": "CREDIT",
+            "number": "5404451196141300966",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "CHF",
+            "issuer_name": "SWISSCARD AECS GMBH",
+            "issuer_country": "CH",
+            "holder_name": "Jamie Davis",
+            "valid_from": "08/23",
+            "valid_to": "09/28",
+            "security_code": "235"
         },
         {
             "type": "extension-definition",
@@ -224,11 +184,11 @@
         {
             "type": "identity",
             "spec_version": "2.1",
-            "id": "identity--1bc6c3b9-4052-5a58-b964-0fd1bc74b60d",
+            "id": "identity--24eacdbd-1f33-5b91-b360-e57bda4aad76",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
-            "name": "WIDGET FEDERAL CREDIT UNION (US)",
+            "name": "BANCO SANTANDER (BRASIL), S.A. (BR)",
             "identity_class": "organization",
             "sectors": [
                 "financial-services"
@@ -242,65 +202,11 @@
         {
             "type": "identity",
             "spec_version": "2.1",
-            "id": "identity--1e11cb1b-fec8-59dc-8cd9-bae0aa46492c",
+            "id": "identity--2ed1c4ea-9ed5-55f7-9032-67b364885158",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
-            "name": "SYDBANK A/S (DK)",
-            "identity_class": "organization",
-            "sectors": [
-                "financial-services"
-            ],
-            "contact_information": "* Bank URL: https://www.sydbank.dk,\n* Bank Phone: +4570107879",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "identity",
-            "spec_version": "2.1",
-            "id": "identity--243990d9-cd25-5b15-af44-849403ae3600",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "name": "DANSKE BANK A/S (DK)",
-            "identity_class": "organization",
-            "sectors": [
-                "financial-services"
-            ],
-            "contact_information": "* Bank URL: http://www.sampopank.ee,\n* Bank Phone: ",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "identity",
-            "spec_version": "2.1",
-            "id": "identity--726375ce-a169-51c6-bbab-acf569ff5941",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "name": "HANCOCK WHITNEY BANK (US)",
-            "identity_class": "organization",
-            "sectors": [
-                "financial-services"
-            ],
-            "contact_information": "* Bank URL: http://www.hancockwhitney.com,\n* Bank Phone: +18004488812",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "identity",
-            "spec_version": "2.1",
-            "id": "identity--8770d9c5-7f4a-5637-82a9-5aea756d3c25",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "name": "STANFORD FEDERAL CREDIT UNION (US)",
+            "name": "TEG FEDERAL CREDIT UNION (US)",
             "identity_class": "organization",
             "sectors": [
                 "financial-services"
@@ -314,16 +220,124 @@
         {
             "type": "identity",
             "spec_version": "2.1",
-            "id": "identity--9e5f99ec-e9f7-5fb3-ad84-c9119b0b223b",
+            "id": "identity--526a3099-3fe3-58b6-b32a-189f89701f92",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
-            "name": "NORDEA BANK AB (PUBL) (DK)",
+            "name": " (CA)",
             "identity_class": "organization",
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: ",
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--56712820-6122-5373-8201-f92af875cef4",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "CITIBANK N.A. (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.citibank.com.vn,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--8c254500-8fe5-5342-909a-511506002320",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "SWISSCARD AECS GMBH (CH)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--a45f1dbb-4400-5925-b3eb-c6a91e08fd21",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "HONG LEONG BANK BERHAD (MY)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.hlb.com.my,\n* Bank Phone: +60376268899",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--b86ab71e-b499-56b7-9e0e-74f5ef7804e3",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "SCHOOLSFIRST FEDERAL CREDIT UNION (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.schoolsfirstfcu.org,\n* Bank Phone: +18004628328",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--c139dec0-ca08-56ec-9f1b-42de25c1083e",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "ITAU UNIBANCO, S.A. (BR)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.itau.com.br,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--ca3cd195-4b0f-5e65-b43b-bf85cbcf1152",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "MALAYAN BANKING BERHAD (MY)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.maybank.com,\n* Bank Phone: +601300886688",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -351,52 +365,16 @@
         {
             "type": "identity",
             "spec_version": "2.1",
-            "id": "identity--dc4d9a85-afaa-5f06-9ad9-52b78bcb7e91",
+            "id": "identity--f7ad20fd-3697-532f-b9e1-afcc805cdd9d",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
-            "name": "THE BANCORP BANK, NATIONAL ASSOCIATION (US)",
+            "name": "OVERSEA-CHINESE BANKING CORPORATION, LTD. (SG)",
             "identity_class": "organization",
             "sectors": [
                 "financial-services"
             ],
             "contact_information": "* Bank URL: ,\n* Bank Phone: ",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "identity",
-            "spec_version": "2.1",
-            "id": "identity--f279bd32-7363-5c25-8836-85ff87a69d78",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "name": "CU COOPERATIVE SYSTEMS, LLC (US)",
-            "identity_class": "organization",
-            "sectors": [
-                "financial-services"
-            ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "identity",
-            "spec_version": "2.1",
-            "id": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "name": "NORDEA BANK DANMARK A/S (DK)",
-            "identity_class": "organization",
-            "sectors": [
-                "financial-services"
-            ],
-            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: +4533333333",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -420,13 +398,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--222becd5-48b3-5b6c-ae27-e92cc88b9ae4",
+            "id": "relationship--3e0dafa1-3b17-5fdf-997e-9f0be99f38b9",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--e84dc12a-9f56-5b65-b4d3-0dceed6795ce",
-            "target_ref": "identity--243990d9-cd25-5b15-af44-849403ae3600",
+            "source_ref": "bank-card--1fb0275c-9735-5bf2-9b5c-b2fcf24d476f",
+            "target_ref": "identity--56712820-6122-5373-8201-f92af875cef4",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -435,13 +413,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--46370931-3f82-5d52-a747-c1b0637d87d5",
+            "id": "relationship--64510bdc-cd79-5c07-9091-5e0519177369",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--9f8bc65d-e0d1-55df-8479-737044f00750",
-            "target_ref": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
+            "source_ref": "bank-card--1d843ae3-56f4-5e10-88a2-b5486ec0d6fc",
+            "target_ref": "identity--526a3099-3fe3-58b6-b32a-189f89701f92",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -450,13 +428,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--47f9abed-9a4c-5cb9-8471-3c5b1f19e8f8",
+            "id": "relationship--66e65545-3a93-58b3-927f-7598388068e6",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--5b8b0b93-a50d-5476-8463-b8abbaabd4d7",
-            "target_ref": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
+            "source_ref": "bank-card--ccbfec73-a23a-579d-9755-35dcd444c0fd",
+            "target_ref": "identity--24eacdbd-1f33-5b91-b360-e57bda4aad76",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -465,13 +443,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--54e71acd-91ff-5306-8e0c-2f7c32362739",
+            "id": "relationship--80a31ad7-3dcc-54f2-b0ef-e8f33cb6b975",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--036044a5-f5a6-5f8c-9568-51443a15c499",
-            "target_ref": "identity--1bc6c3b9-4052-5a58-b964-0fd1bc74b60d",
+            "source_ref": "bank-card--40e2fbfc-6003-555d-b618-8d5b25180bf8",
+            "target_ref": "identity--c139dec0-ca08-56ec-9f1b-42de25c1083e",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -480,13 +458,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--75cebcdb-7b16-5ce1-82f8-bd5e6bdbfba3",
+            "id": "relationship--9cb66fa4-ad6c-5b42-aba5-9f0295d0689c",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--1221e258-adf9-5148-9b54-1edcfa00d9ba",
-            "target_ref": "identity--9e5f99ec-e9f7-5fb3-ad84-c9119b0b223b",
+            "source_ref": "bank-card--280eeed8-d87f-51ca-8a92-1710eeb1a980",
+            "target_ref": "identity--2ed1c4ea-9ed5-55f7-9032-67b364885158",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -495,13 +473,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--96c3703d-a987-53ef-91f2-1b5a209d4566",
+            "id": "relationship--a4f13c41-7e66-5bbd-a660-e97817c2a01c",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--16ecf0f6-9c1a-5353-ae16-23a23167da75",
-            "target_ref": "identity--8770d9c5-7f4a-5637-82a9-5aea756d3c25",
+            "source_ref": "bank-card--02ed10b9-d5a4-5c5d-a660-af7199fcc873",
+            "target_ref": "identity--ca3cd195-4b0f-5e65-b43b-bf85cbcf1152",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -510,13 +488,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--ad57b115-43e7-5303-a1fd-b526a098a56d",
+            "id": "relationship--b7231930-5500-59c8-b084-0a3d2f5a6ffa",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--6dbd1beb-dcea-5f03-9403-ae4f53fc572b",
-            "target_ref": "identity--dc4d9a85-afaa-5f06-9ad9-52b78bcb7e91",
+            "source_ref": "bank-card--2c0a2433-b62b-5de5-909f-178aff2ebb03",
+            "target_ref": "identity--f7ad20fd-3697-532f-b9e1-afcc805cdd9d",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -525,13 +503,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--da32f516-49a2-5fdc-9179-abf70e7ec95c",
+            "id": "relationship--bb1502b6-82a9-5b94-a7d7-5a793609c225",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--eaf8c69d-dc03-54b2-8105-dc42246fc34f",
-            "target_ref": "identity--f279bd32-7363-5c25-8836-85ff87a69d78",
+            "source_ref": "bank-card--1ad7726c-f522-54bb-8489-816127009ec3",
+            "target_ref": "identity--b86ab71e-b499-56b7-9e0e-74f5ef7804e3",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -540,13 +518,13 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--e088329f-861b-5831-9c39-1f299c36e216",
+            "id": "relationship--d4b0ed3b-a56f-5d4f-87ea-6b29d67c50a8",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--0728dbfb-e99f-57bb-91f0-eee054ffc416",
-            "target_ref": "identity--1e11cb1b-fec8-59dc-8cd9-bae0aa46492c",
+            "source_ref": "bank-card--d3701b4a-0aa7-586a-a0aa-e980109d14b9",
+            "target_ref": "identity--8c254500-8fe5-5342-909a-511506002320",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -555,16 +533,42 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--ea090045-875c-53ad-8254-1f894ee06ac3",
+            "id": "relationship--fb0dca98-033e-59d5-976b-09f68785de82",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
             "modified": "2020-01-01T00:00:00.000Z",
             "relationship_type": "issued-by",
-            "source_ref": "bank-card--1184e9fc-720d-52fc-96a4-6871de31e539",
-            "target_ref": "identity--726375ce-a169-51c6-bbab-acf569ff5941",
+            "source_ref": "bank-card--c07c76ba-56ed-576e-9820-61bdb5cf6ff2",
+            "target_ref": "identity--a45f1dbb-4400-5925-b3eb-c6a91e08fd21",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "report",
+            "spec_version": "2.1",
+            "id": "report--028aa4b4-4e1d-5ef0-ba12-dcdee43a9753",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Dumped cards in fake dump",
+            "description": "The group Card Varies dumped the cards after using fake websites to obtain the details",
+            "report_types": [
+                "observed-data"
+            ],
+            "published": "2020-01-01T00:00:00Z",
+            "object_refs": [
+                "bank-card--ccbfec73-a23a-579d-9755-35dcd444c0fd",
+                "bank-card--280eeed8-d87f-51ca-8a92-1710eeb1a980",
+                "bank-card--1d843ae3-56f4-5e10-88a2-b5486ec0d6fc",
+                "bank-card--1fb0275c-9735-5bf2-9b5c-b2fcf24d476f",
+                "bank-card--c07c76ba-56ed-576e-9820-61bdb5cf6ff2",
+                "bank-card--2c0a2433-b62b-5de5-909f-178aff2ebb03",
+                "bank-card--02ed10b9-d5a4-5c5d-a660-af7199fcc873",
+                "bank-card--1ad7726c-f522-54bb-8489-816127009ec3",
+                "bank-card--40e2fbfc-6003-555d-b618-8d5b25180bf8",
+                "bank-card--d3701b4a-0aa7-586a-a0aa-e980109d14b9"
             ]
         }
     ]
