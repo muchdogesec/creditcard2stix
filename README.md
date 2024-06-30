@@ -10,6 +10,10 @@ You can also optionally create a STIX Report object to document details about wh
 
 This repository also contains a demo script so that you can try the script with some dummy credit card data to see how it works.
 
+## tl;dr
+
+[![creditcard2stix](https://img.youtube.com/vi/mPSQ5FRW0hM/0.jpg)](https://www.youtube.com/watch?v=mPSQ5FRW0hM)
+
 ## Install 
 
 ```shell
