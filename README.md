@@ -81,6 +81,8 @@ Note, if the same `card_number` is found in the file more than once, the record 
 
 BIN Check have an API that allows you to pass parts of a bank card to get more data about it (e.g. bank issuer, bank location, etc.).
 
+[You get an API key here](https://rapidapi.com/trade-expanding-llc-trade-expanding-llc-default/api/bin-ip-checker).
+
 Their API accepts requests as follows;
 
 ```shell
