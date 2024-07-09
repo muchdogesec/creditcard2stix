@@ -28,7 +28,7 @@ OUTPUT_DIR = "stix2_objects"
 
 # URLs of default STIX objects
 DEFAULT_OBJECT_URLS = [
-    "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/extension-definition/bank-card.json",
+    "https://raw.githubusercontent.com/muchdogesec/stix2extensions/main/extension-definitions/scos/bank-card.json",
     "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/identity/creditcard2stix.json",
     "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/objects/marking-definition/creditcard2stix.json"
 ]

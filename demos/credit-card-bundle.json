@@ -171,7 +171,7 @@
             "modified": "2020-01-01T00:00:00.000Z",
             "name": "Bank Card",
             "description": "This extension creates a new SCO that can be used to represent bank cards.",
-            "schema": "https://raw.githubusercontent.com/muchdogesec/stix4doge/main/schemas/scos/bank-card.json",
+            "schema": "https://raw.githubusercontent.com/muchdogesec/stix2extensions/main/schemas/scos/bank-card.json",
             "version": "1.0",
             "extension_types": [
                 "new-sco"
