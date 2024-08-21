@@ -6,8 +6,8 @@ import hashlib
 import argparse
 import logging
 from datetime import datetime
-from stix2 import Bundle, Identity, Relationship, CustomObservable, Report, parse, FileSystemStore
-from stix2.properties import StringProperty, IDProperty, ListProperty, ReferenceProperty
+from stix2 import Bundle, Identity, CustomObservable, Report, parse, FileSystemStore
+from stix2.properties import StringProperty, IDProperty, ReferenceProperty
 from dotenv import load_dotenv
 import os
 import shutil
@@ -44,9 +44,8 @@ _type = 'bank-card'
     ('scheme', StringProperty()),
     ('brand', StringProperty()),
     ('currency', StringProperty()),
-    ('issuer_name', StringProperty()),
-    ('issuer_country', StringProperty()),
-    ('holder_name', StringProperty()),
+    ('issuer_ref', ReferenceProperty(valid_types='identity', spec_version='2.1')),
+    ('holder_ref', ReferenceProperty(valid_types='identity', spec_version='2.1')),
     ('valid_from', StringProperty()),
     ('valid_to', StringProperty()),
     ('security_code', StringProperty()),
@@ -92,7 +91,23 @@ def create_identity(bin_data):
         ]
     )
 
-def create_credit_card_stix(card_data, bin_data):
+def create_holder_identity(card_holder_name, card_number):
+    holder_key = f"{card_holder_name}+{card_number}"
+    holder_id = f"identity--{str(uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), holder_key))}"
+    return Identity(
+        id=holder_id,
+        name=card_holder_name,
+        created="2020-01-01T00:00:00.000Z",
+        modified="2020-01-01T00:00:00.000Z",
+        identity_class="individual",
+        created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+        object_marking_refs=[
+            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+        ]
+    )
+
+def create_credit_card_stix(card_data, bin_data, issuer_ref, holder_ref=None):
     card_id = f"bank-card--{str(uuid.uuid5(uuid.UUID(OASIS_NAMESPACE), card_data['card_number']))}"
     credit_card_data = {
         'type': 'bank-card',
@@ -103,41 +118,20 @@ def create_credit_card_stix(card_data, bin_data):
         'scheme': bin_data['BIN']['scheme'] if bin_data else None,
         'brand': bin_data['BIN']['brand'] if bin_data else None,
         'currency': bin_data['BIN']['currency'] if bin_data else None,
-        'issuer_name': bin_data['BIN']['issuer']['name'] if bin_data else None,
-        'issuer_country': bin_data['BIN']['country']['alpha2'] if bin_data else None,
+        'issuer_ref': issuer_ref,
+        'holder_ref': holder_ref,
+        'valid_from': card_data.get('card_valid_date'),
+        'valid_to': card_data.get('card_expiry_date'),
+        'security_code': card_data.get('card_security_code'),
+        'extensions': {
+            "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                "extension_type": "new-sco"
+            }
+        }
     }
-    
-    # Add optional fields if they are present and not empty
-    optional_fields = ['card_holder_name', 'card_valid_date', 'card_expiry_date', 'card_security_code']
-    field_mapping = {
-        'card_holder_name': 'holder_name',
-        'card_valid_date': 'valid_from',
-        'card_expiry_date': 'valid_to',
-        'card_security_code': 'security_code'
-    }
-    
-    for field in optional_fields:
-        if card_data.get(field):
-            credit_card_data[field_mapping[field]] = card_data[field]
     
     credit_card = BankCard(**credit_card_data)
     return credit_card
-
-def create_relationship(card_stix, identity_stix):
-    relationship_id = f"relationship--{str(uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), f'{card_stix.id}+{identity_stix.id}'))}"
-    return Relationship(
-        id=relationship_id,
-        relationship_type="issued-by",
-        created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-        created="2020-01-01T00:00:00.000Z",
-        modified="2020-01-01T00:00:00.000Z",
-        source_ref=card_stix.id,
-        target_ref=identity_stix.id,
-        object_marking_refs=[
-            "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-            "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-        ]
-    )
 
 def download_default_objects(fs_store):
     for url in DEFAULT_OBJECT_URLS:
@@ -167,17 +161,23 @@ def process_csv(input_csv, fs_store):
 
     for card_number, card_data in cards.items():
         bin_data = get_bin_data(card_number)
-        card_stix = create_credit_card_stix(card_data, bin_data)
-        fs_store.add(card_stix)
-
+        issuer_identity = None
         if bin_data and bin_data['BIN']['valid']:
             identity_key = f"{bin_data['BIN']['issuer']['name']}_{bin_data['BIN']['country']['alpha2']}"
             if identity_key not in identities:
-                identity_stix = create_identity(bin_data)
-                identities[identity_key] = identity_stix
-                fs_store.add(identity_stix)
-            relationship_stix = create_relationship(card_stix, identities[identity_key])
-            fs_store.add(relationship_stix)
+                issuer_identity = create_identity(bin_data)
+                identities[identity_key] = issuer_identity
+                fs_store.add(issuer_identity)
+            else:
+                issuer_identity = identities[identity_key]
+
+        holder_identity = None
+        if card_data.get('card_holder_name'):
+            holder_identity = create_holder_identity(card_data['card_holder_name'], card_number)
+            fs_store.add(holder_identity)
+        
+        card_stix = create_credit_card_stix(card_data, bin_data, issuer_identity.id, holder_identity.id if holder_identity else None)
+        fs_store.add(card_stix)
 
 def create_report(report_csv, stix_objects):
     with open(report_csv, newline='') as csvfile:

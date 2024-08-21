@@ -1,6 +1,6 @@
 {
     "type": "bundle",
-    "id": "bundle--3343df54-caa4-5db0-9a13-c9f9dac1a441",
+    "id": "bundle--d5605af1-9287-5d18-b6a3-c3f21aea1f58",
     "objects": [
         {
             "type": "bank-card",
@@ -11,12 +11,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "MYR",
-            "issuer_name": "MALAYAN BANKING BERHAD",
-            "issuer_country": "MY",
-            "holder_name": "John Jones",
+            "issuer_ref": "identity--ca3cd195-4b0f-5e65-b43b-bf85cbcf1152",
+            "holder_ref": "identity--4c223fbe-a1a4-5618-940f-699fa32ae443",
             "valid_from": "11/23",
             "valid_to": "06/28",
-            "security_code": "937"
+            "security_code": "937",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -27,12 +31,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "USD",
-            "issuer_name": "SCHOOLSFIRST FEDERAL CREDIT UNION",
-            "issuer_country": "US",
-            "holder_name": "Sam Davis",
+            "issuer_ref": "identity--b86ab71e-b499-56b7-9e0e-74f5ef7804e3",
+            "holder_ref": "identity--14ca966d-ea1f-59a6-aabc-c386ea9fd5fa",
             "valid_from": "10/23",
             "valid_to": "06/28",
-            "security_code": "743"
+            "security_code": "743",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -43,12 +51,16 @@
             "scheme": "AMERICAN EXPRESS",
             "brand": "AMERICAN EXPRESS",
             "currency": "CAD",
-            "issuer_name": "",
-            "issuer_country": "CA",
-            "holder_name": "Jane Wilson",
+            "issuer_ref": "identity--526a3099-3fe3-58b6-b32a-189f89701f92",
+            "holder_ref": "identity--269593cc-5923-5a12-a074-d5ac7e9c2102",
             "valid_from": "08/23",
             "valid_to": "01/28",
-            "security_code": "1585"
+            "security_code": "1585",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -59,12 +71,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "USD",
-            "issuer_name": "CITIBANK N.A.",
-            "issuer_country": "US",
-            "holder_name": "Alex Williams",
+            "issuer_ref": "identity--56712820-6122-5373-8201-f92af875cef4",
+            "holder_ref": "identity--0a5c361d-dab4-5fab-9d74-22922a15f47c",
             "valid_from": "01/23",
             "valid_to": "06/28",
-            "security_code": "246"
+            "security_code": "246",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -75,12 +91,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "USD",
-            "issuer_name": "TEG FEDERAL CREDIT UNION",
-            "issuer_country": "US",
-            "holder_name": "John Miller",
+            "issuer_ref": "identity--2ed1c4ea-9ed5-55f7-9032-67b364885158",
+            "holder_ref": "identity--e178251f-308a-55ec-bbb2-28b1de243b57",
             "valid_from": "06/23",
             "valid_to": "08/28",
-            "security_code": "323"
+            "security_code": "323",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -91,12 +111,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "SGD",
-            "issuer_name": "OVERSEA-CHINESE BANKING CORPORATION, LTD.",
-            "issuer_country": "SG",
-            "holder_name": "Jamie Wilson",
+            "issuer_ref": "identity--f7ad20fd-3697-532f-b9e1-afcc805cdd9d",
+            "holder_ref": "identity--28c68249-fbd4-5400-a312-c9088c14a1c5",
             "valid_from": "11/23",
             "valid_to": "03/28",
-            "security_code": "380"
+            "security_code": "380",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -107,12 +131,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "BRL",
-            "issuer_name": "ITAU UNIBANCO, S.A.",
-            "issuer_country": "BR",
-            "holder_name": "Jane Davis",
+            "issuer_ref": "identity--c139dec0-ca08-56ec-9f1b-42de25c1083e",
+            "holder_ref": "identity--3548fa5e-d1df-5d47-88af-82f55ea675f9",
             "valid_from": "03/23",
             "valid_to": "02/28",
-            "security_code": "470"
+            "security_code": "470",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -123,12 +151,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "MYR",
-            "issuer_name": "HONG LEONG BANK BERHAD",
-            "issuer_country": "MY",
-            "holder_name": "Chris Moore",
+            "issuer_ref": "identity--a45f1dbb-4400-5925-b3eb-c6a91e08fd21",
+            "holder_ref": "identity--7a8c96d1-76c7-5a34-a087-7273359107de",
             "valid_from": "01/23",
             "valid_to": "01/28",
-            "security_code": "046"
+            "security_code": "046",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -139,12 +171,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "BRL",
-            "issuer_name": "BANCO SANTANDER (BRASIL), S.A.",
-            "issuer_country": "BR",
-            "holder_name": "Pat Brown",
+            "issuer_ref": "identity--24eacdbd-1f33-5b91-b360-e57bda4aad76",
+            "holder_ref": "identity--90076378-e02e-5b58-9eaa-a96e7ad9afbe",
             "valid_from": "09/23",
             "valid_to": "07/28",
-            "security_code": "443"
+            "security_code": "443",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "bank-card",
@@ -155,12 +191,16 @@
             "scheme": "MASTERCARD",
             "brand": "MASTERCARD",
             "currency": "CHF",
-            "issuer_name": "SWISSCARD AECS GMBH",
-            "issuer_country": "CH",
-            "holder_name": "Jamie Davis",
+            "issuer_ref": "identity--8c254500-8fe5-5342-909a-511506002320",
+            "holder_ref": "identity--d9567c03-f4cd-5db7-94ac-a28c4d6180db",
             "valid_from": "08/23",
             "valid_to": "09/28",
-            "security_code": "235"
+            "security_code": "235",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
         },
         {
             "type": "extension-definition",
@@ -178,7 +218,35 @@
             ],
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--97ba4e8b-04f6-57e8-8f6e-3a0f0a7dc0fb"
+                "marking-definition--60c0f466-511a-5419-9f7e-4814e696da40"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--0a5c361d-dab4-5fab-9d74-22922a15f47c",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Alex Williams",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--14ca966d-ea1f-59a6-aabc-c386ea9fd5fa",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Sam Davis",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
             ]
         },
         {
@@ -202,6 +270,34 @@
         {
             "type": "identity",
             "spec_version": "2.1",
+            "id": "identity--269593cc-5923-5a12-a074-d5ac7e9c2102",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Jane Wilson",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--28c68249-fbd4-5400-a312-c9088c14a1c5",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Jamie Wilson",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
             "id": "identity--2ed1c4ea-9ed5-55f7-9032-67b364885158",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
@@ -212,6 +308,34 @@
                 "financial-services"
             ],
             "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--3548fa5e-d1df-5d47-88af-82f55ea675f9",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Jane Davis",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--4c223fbe-a1a4-5618-940f-699fa32ae443",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "John Jones",
+            "identity_class": "individual",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -256,6 +380,20 @@
         {
             "type": "identity",
             "spec_version": "2.1",
+            "id": "identity--7a8c96d1-76c7-5a34-a087-7273359107de",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Chris Moore",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
             "id": "identity--8c254500-8fe5-5342-909a-511506002320",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
@@ -266,6 +404,20 @@
                 "financial-services"
             ],
             "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--90076378-e02e-5b58-9eaa-a96e7ad9afbe",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Pat Brown",
+            "identity_class": "individual",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -365,6 +517,34 @@
         {
             "type": "identity",
             "spec_version": "2.1",
+            "id": "identity--d9567c03-f4cd-5db7-94ac-a28c4d6180db",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Jamie Davis",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--e178251f-308a-55ec-bbb2-28b1de243b57",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "John Miller",
+            "identity_class": "individual",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
             "id": "identity--f7ad20fd-3697-532f-b9e1-afcc805cdd9d",
             "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
             "created": "2020-01-01T00:00:00.000Z",
@@ -393,156 +573,6 @@
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--97ba4e8b-04f6-57e8-8f6e-3a0f0a7dc0fb"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--3e0dafa1-3b17-5fdf-997e-9f0be99f38b9",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--1fb0275c-9735-5bf2-9b5c-b2fcf24d476f",
-            "target_ref": "identity--56712820-6122-5373-8201-f92af875cef4",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--64510bdc-cd79-5c07-9091-5e0519177369",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--1d843ae3-56f4-5e10-88a2-b5486ec0d6fc",
-            "target_ref": "identity--526a3099-3fe3-58b6-b32a-189f89701f92",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--66e65545-3a93-58b3-927f-7598388068e6",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--ccbfec73-a23a-579d-9755-35dcd444c0fd",
-            "target_ref": "identity--24eacdbd-1f33-5b91-b360-e57bda4aad76",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--80a31ad7-3dcc-54f2-b0ef-e8f33cb6b975",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--40e2fbfc-6003-555d-b618-8d5b25180bf8",
-            "target_ref": "identity--c139dec0-ca08-56ec-9f1b-42de25c1083e",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--9cb66fa4-ad6c-5b42-aba5-9f0295d0689c",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--280eeed8-d87f-51ca-8a92-1710eeb1a980",
-            "target_ref": "identity--2ed1c4ea-9ed5-55f7-9032-67b364885158",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--a4f13c41-7e66-5bbd-a660-e97817c2a01c",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--02ed10b9-d5a4-5c5d-a660-af7199fcc873",
-            "target_ref": "identity--ca3cd195-4b0f-5e65-b43b-bf85cbcf1152",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--b7231930-5500-59c8-b084-0a3d2f5a6ffa",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--2c0a2433-b62b-5de5-909f-178aff2ebb03",
-            "target_ref": "identity--f7ad20fd-3697-532f-b9e1-afcc805cdd9d",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--bb1502b6-82a9-5b94-a7d7-5a793609c225",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--1ad7726c-f522-54bb-8489-816127009ec3",
-            "target_ref": "identity--b86ab71e-b499-56b7-9e0e-74f5ef7804e3",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--d4b0ed3b-a56f-5d4f-87ea-6b29d67c50a8",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--d3701b4a-0aa7-586a-a0aa-e980109d14b9",
-            "target_ref": "identity--8c254500-8fe5-5342-909a-511506002320",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--fb0dca98-033e-59d5-976b-09f68785de82",
-            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
-            "created": "2020-01-01T00:00:00.000Z",
-            "modified": "2020-01-01T00:00:00.000Z",
-            "relationship_type": "issued-by",
-            "source_ref": "bank-card--c07c76ba-56ed-576e-9820-61bdb5cf6ff2",
-            "target_ref": "identity--a45f1dbb-4400-5925-b3eb-c6a91e08fd21",
-            "object_marking_refs": [
-                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
-                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
             ]
         },
         {

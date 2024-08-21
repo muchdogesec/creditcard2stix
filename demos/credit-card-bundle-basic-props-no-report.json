@@ -1,0 +1,411 @@
+{
+    "type": "bundle",
+    "id": "bundle--36a2df1e-bede-59a1-834d-e54d42f59734",
+    "objects": [
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--036044a5-f5a6-5f8c-9568-51443a15c499",
+            "format": "DEBIT",
+            "number": "5507211322378981",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "USD",
+            "issuer_ref": "identity--1bc6c3b9-4052-5a58-b964-0fd1bc74b60d",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--0728dbfb-e99f-57bb-91f0-eee054ffc416",
+            "format": "DEBIT",
+            "number": "4571717066493601",
+            "scheme": "VISA/DANKORT",
+            "brand": "VISA/DANKORT",
+            "currency": "DKK",
+            "issuer_ref": "identity--1e11cb1b-fec8-59dc-8cd9-bae0aa46492c",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--1184e9fc-720d-52fc-96a4-6871de31e539",
+            "format": "DEBIT",
+            "number": "4011745154761523681",
+            "scheme": "VISA",
+            "brand": "VISA",
+            "currency": "USD",
+            "issuer_ref": "identity--726375ce-a169-51c6-bbab-acf569ff5941",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--1221e258-adf9-5148-9b54-1edcfa00d9ba",
+            "format": "CREDIT",
+            "number": "5578922131134044426",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "DKK",
+            "issuer_ref": "identity--9e5f99ec-e9f7-5fb3-ad84-c9119b0b223b",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--16ecf0f6-9c1a-5353-ae16-23a23167da75",
+            "format": "CREDIT",
+            "number": "4387630065656149",
+            "scheme": "VISA",
+            "brand": "VISA",
+            "currency": "USD",
+            "issuer_ref": "identity--8770d9c5-7f4a-5637-82a9-5aea756d3c25",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--5b8b0b93-a50d-5476-8463-b8abbaabd4d7",
+            "format": "DEBIT",
+            "number": "4571577218185446",
+            "scheme": "VISA/DANKORT",
+            "brand": "VISA/DANKORT",
+            "currency": "DKK",
+            "issuer_ref": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--6dbd1beb-dcea-5f03-9403-ae4f53fc572b",
+            "format": "DEBIT",
+            "number": "4064988817185467",
+            "scheme": "VISA",
+            "brand": "VISA",
+            "currency": "USD",
+            "issuer_ref": "identity--dc4d9a85-afaa-5f06-9ad9-52b78bcb7e91",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--9f8bc65d-e0d1-55df-8479-737044f00750",
+            "format": "DEBIT",
+            "number": "4571226057677886",
+            "scheme": "VISA/DANKORT",
+            "brand": "VISA/DANKORT",
+            "currency": "DKK",
+            "issuer_ref": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--e84dc12a-9f56-5b65-b4d3-0dceed6795ce",
+            "format": "DEBIT",
+            "number": "4571402700224716",
+            "scheme": "VISA/DANKORT",
+            "brand": "VISA/DANKORT",
+            "currency": "DKK",
+            "issuer_ref": "identity--243990d9-cd25-5b15-af44-849403ae3600",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "bank-card",
+            "spec_version": "2.1",
+            "id": "bank-card--eaf8c69d-dc03-54b2-8105-dc42246fc34f",
+            "format": "DEBIT",
+            "number": "5511497437315197413",
+            "scheme": "MASTERCARD",
+            "brand": "MASTERCARD",
+            "currency": "USD",
+            "issuer_ref": "identity--f279bd32-7363-5c25-8836-85ff87a69d78",
+            "valid_from": "",
+            "valid_to": "",
+            "security_code": "",
+            "extensions": {
+                "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0": {
+                    "extension_type": "new-sco"
+                }
+            }
+        },
+        {
+            "type": "extension-definition",
+            "spec_version": "2.1",
+            "id": "extension-definition--7922f91a-ee77-58a5-8217-321ce6a2d6e0",
+            "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "Bank Card",
+            "description": "This extension creates a new SCO that can be used to represent bank cards.",
+            "schema": "https://raw.githubusercontent.com/muchdogesec/stix2extensions/main/schemas/scos/bank-card.json",
+            "version": "1.0",
+            "extension_types": [
+                "new-sco"
+            ],
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--60c0f466-511a-5419-9f7e-4814e696da40"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--1bc6c3b9-4052-5a58-b964-0fd1bc74b60d",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "WIDGET FEDERAL CREDIT UNION (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--1e11cb1b-fec8-59dc-8cd9-bae0aa46492c",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "SYDBANK A/S (DK)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: https://www.sydbank.dk,\n* Bank Phone: +4570107879",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--243990d9-cd25-5b15-af44-849403ae3600",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "DANSKE BANK A/S (DK)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: http://www.sampopank.ee,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--726375ce-a169-51c6-bbab-acf569ff5941",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "HANCOCK WHITNEY BANK (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: http://www.hancockwhitney.com,\n* Bank Phone: +18004488812",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--8770d9c5-7f4a-5637-82a9-5aea756d3c25",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "STANFORD FEDERAL CREDIT UNION (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--9e5f99ec-e9f7-5fb3-ad84-c9119b0b223b",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "NORDEA BANK AB (PUBL) (DK)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "creditcard2stix",
+            "description": "https://github.com/muchdogsec/creditcard2stix",
+            "identity_class": "system",
+            "sectors": [
+                "technology"
+            ],
+            "contact_information": "https://www.dogesec.com/contact/",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--97ba4e8b-04f6-57e8-8f6e-3a0f0a7dc0fb"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--dc4d9a85-afaa-5f06-9ad9-52b78bcb7e91",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "THE BANCORP BANK, NATIONAL ASSOCIATION (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--f279bd32-7363-5c25-8836-85ff87a69d78",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "CU COOPERATIVE SYSTEMS, LLC (US)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--f84f62f1-da14-53d1-aee4-df15aeee2797",
+            "created_by_ref": "identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created": "2020-01-01T00:00:00.000Z",
+            "modified": "2020-01-01T00:00:00.000Z",
+            "name": "NORDEA BANK DANMARK A/S (DK)",
+            "identity_class": "organization",
+            "sectors": [
+                "financial-services"
+            ],
+            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: +4533333333",
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
+            ]
+        },
+        {
+            "type": "marking-definition",
+            "spec_version": "2.1",
+            "id": "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac",
+            "created_by_ref": "identity--9779a2db-f98c-5f4b-8d08-8ee04e02dbb5",
+            "created": "2020-01-01T00:00:00.000Z",
+            "definition_type": "statement",
+            "definition": {
+                "statement": "This object was created using: https://github.com/muchdogesec/creditcard2stix"
+            },
+            "object_marking_refs": [
+                "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
+                "marking-definition--97ba4e8b-04f6-57e8-8f6e-3a0f0a7dc0fb"
+            ]
+        }
+    ]
+}
