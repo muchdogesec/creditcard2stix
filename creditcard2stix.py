@@ -76,6 +76,15 @@ def create_identity(bin_data):
     country = bin_data['BIN']['country']
     name = f"{issuer['name']} ({country['alpha2']})"
     identity_id = f"identity--{str(uuid.uuid5(uuid.UUID(IDENTITY_NAMESPACE), name))}"
+    
+    # Construct the contact_information string only with available data
+    contact_info_parts = []
+    if 'website' in issuer and issuer['website']:
+        contact_info_parts.append(f"* Bank URL: {issuer['website']}")
+    if 'phone' in issuer and issuer['phone']:
+        contact_info_parts.append(f"* Bank Phone: {issuer['phone']}")
+    contact_information = '\n'.join(contact_info_parts) if contact_info_parts else None
+
     return Identity(
         id=identity_id,
         name=name,
@@ -83,7 +92,7 @@ def create_identity(bin_data):
         modified="2020-01-01T00:00:00.000Z",
         identity_class="organization",
         sectors=["financial-services"],
-        contact_information=f"* Bank URL: {issuer['website']},\n* Bank Phone: {issuer['phone']}",
+        contact_information=contact_information,
         created_by_ref="identity--d287a5a4-facc-5254-9563-9e92e3e729ac",
         object_marking_refs=[
             "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",

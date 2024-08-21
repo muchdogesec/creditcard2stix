@@ -1,6 +1,6 @@
 {
     "type": "bundle",
-    "id": "bundle--d5605af1-9287-5d18-b6a3-c3f21aea1f58",
+    "id": "bundle--94f8e489-88a2-55ae-b061-0b5641981c6d",
     "objects": [
         {
             "type": "bank-card",
@@ -261,7 +261,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -307,7 +306,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -353,7 +351,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -371,7 +368,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.citibank.com.vn,\n* Bank Phone: ",
+            "contact_information": "* Bank URL: https://www.citibank.com.vn",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -403,7 +400,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -435,7 +431,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.hlb.com.my,\n* Bank Phone: +60376268899",
+            "contact_information": "* Bank URL: https://www.hlb.com.my\n* Bank Phone: +60376268899",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -453,7 +449,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.schoolsfirstfcu.org,\n* Bank Phone: +18004628328",
+            "contact_information": "* Bank URL: https://www.schoolsfirstfcu.org\n* Bank Phone: +18004628328",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -471,7 +467,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.itau.com.br,\n* Bank Phone: ",
+            "contact_information": "* Bank URL: https://www.itau.com.br",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -489,7 +485,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.maybank.com,\n* Bank Phone: +601300886688",
+            "contact_information": "* Bank URL: https://www.maybank.com\n* Bank Phone: +601300886688",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -554,7 +550,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"

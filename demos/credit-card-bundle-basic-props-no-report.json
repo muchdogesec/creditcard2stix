@@ -1,6 +1,6 @@
 {
     "type": "bundle",
-    "id": "bundle--36a2df1e-bede-59a1-834d-e54d42f59734",
+    "id": "bundle--0fc49bc4-83c0-592b-a86f-b54b2b153e95",
     "objects": [
         {
             "type": "bank-card",
@@ -223,7 +223,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -241,7 +240,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: https://www.sydbank.dk,\n* Bank Phone: +4570107879",
+            "contact_information": "* Bank URL: https://www.sydbank.dk\n* Bank Phone: +4570107879",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -259,7 +258,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: http://www.sampopank.ee,\n* Bank Phone: ",
+            "contact_information": "* Bank URL: http://www.sampopank.ee",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -277,7 +276,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: http://www.hancockwhitney.com,\n* Bank Phone: +18004488812",
+            "contact_information": "* Bank URL: http://www.hancockwhitney.com\n* Bank Phone: +18004488812",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -295,7 +294,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -313,7 +311,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: ",
+            "contact_information": "* Bank URL: http://www.nordea.com",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -350,7 +348,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -368,7 +365,6 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: ,\n* Bank Phone: ",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
@@ -386,7 +382,7 @@
             "sectors": [
                 "financial-services"
             ],
-            "contact_information": "* Bank URL: http://www.nordea.com,\n* Bank Phone: +4533333333",
+            "contact_information": "* Bank URL: http://www.nordea.com\n* Bank Phone: +4533333333",
             "object_marking_refs": [
                 "marking-definition--94868c89-83c2-464b-929b-a1a8aa3c8487",
                 "marking-definition--d287a5a4-facc-5254-9563-9e92e3e729ac"
