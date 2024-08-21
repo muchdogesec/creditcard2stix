@@ -2,6 +2,8 @@
 
 ## Overview
 
+![](docs/creditcard2stix.png)
+
 This script contains logic to enrich a credit card number input with more information about the card (e.g. issuer, country, etc.).
 
 The script takes a card number (required), card holder name (optional), expiry date (optional), security code (optional) as inputs (as a list) and outputs a range of STIX 2.1 objects for each credit card with added enrichment data.
@@ -13,6 +15,8 @@ This repository also contains a demo script so that you can try the script with 
 ## tl;dr
 
 [![creditcard2stix](https://img.youtube.com/vi/mPSQ5FRW0hM/0.jpg)](https://www.youtube.com/watch?v=mPSQ5FRW0hM)
+
+[Watch the demo](https://www.youtube.com/watch?v=mPSQ5FRW0hM).
 
 ## Install 
 
